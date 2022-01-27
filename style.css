@@ -1,0 +1,70 @@
+div { opacity: 0; }
+
+div#header {
+  text-align: center;
+  padding: 50vh 0;
+  background-color: black;
+  color: white;
+  font-size: xx-large;
+  font-variant: small-caps;
+  font-family: sans-serif;
+}
+
+@keyframes header {
+  from {
+    margin-top: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes entry-even {
+  from {
+    margin-left: 50vw;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes entry-odd {
+  from {
+    margin-right: 50vw;
+    opacity: 0;
+  }
+  to {
+    margin-right: 0px;
+    opacity: 1;
+  }
+}
+
+div.loaded {
+  animation-name: header;
+  animation-duration: 2.5s;
+  opacity: 1;
+}
+
+div.entries { padding: 10px; }
+div.entries:nth-child(even) {
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+div.entries:nth-child(odd) {
+  text-align: right;
+  background-color: gray;
+  color: white;
+}
+div.entries:nth-child(even).loaded {
+  animation-name: entry-even;
+  animation-duration: 2.5s;
+}
+div.entries:nth-child(odd).loaded {
+  animation-name: entry-odd;
+  animation-duration: 2.5s;
+}
